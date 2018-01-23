@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TvaComponent } from './tva/tva.component';
 import { RectComponent } from './rect/rect.component';
 import { UtilModule } from "../util/util.module";
+import { MyheaderComponent } from './myheader/myheader.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TvaComponent,
-    RectComponent
+    RectComponent,
+    MyheaderComponent
   ],
   imports: [
     BrowserModule , FormsModule , UtilModule
