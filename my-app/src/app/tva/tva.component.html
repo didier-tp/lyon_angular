@@ -1,0 +1,13 @@
+<p>  calcul de tva </p>
+ht : <input [(ngModel)]="ht"
+      [style.color]="ht >= 0 ? 'green' : 'red' " /> <br/>
+taux : <input 
+        [class.positif]="taux >=0"
+        [class.negatif]="taux < 0"
+        [(ngModel)]="taux" /> <br/>
+<input type="button" (click)="onCalculer($event)"
+       value="calculer" /> <br/>
+<div *ngIf="tva != null">
+  tva: {{tva}} <br/>
+  ttc: {{ttc}}
+</div>

@@ -1,0 +1,13 @@
+<ul class="nav nav-pills">
+	   <li *ngFor="let title of titles" 
+	       [class.active]="title===activeTabTitle">
+		   <a (click)="onChangeActiveTab(title)">{{title}}</a>
+	  </li>	   
+</ul>
+<div class="panel panel-info" >
+ <div class="panel-body">
+	<ng-content></ng-content>
+	<!-- un ou plusieurs ng-content peut/peuvent etre parametre(s) 
+     par select ="query_selector_tag_or_.class" -->
+ </div>
+</div>
