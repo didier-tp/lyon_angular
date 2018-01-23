@@ -7,6 +7,7 @@ import { TvaComponent } from './tva/tva.component';
 import { RectComponent } from './rect/rect.component';
 import { UtilModule } from "../util/util.module";
 import { MyheaderComponent } from './myheader/myheader.component';
+import { TradService } from "./trad.service";
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { MyheaderComponent } from './myheader/myheader.component';
   imports: [
     BrowserModule , FormsModule , UtilModule
   ],
-  providers: [],
+  providers: [ TradService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

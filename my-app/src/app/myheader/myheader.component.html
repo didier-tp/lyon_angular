@@ -1,2 +1,11 @@
-<h3>{{title}}</h3>  date: {{date | date:"dd/MM/yyyy"}} langue:...
+<h3>{{title}}</h3>  date: {{date | date:"dd/MM/yyyy"}} 
+langue: <select [(ngModel)]="langueChoisie"
+            (change)="onChangeLangue()">
+            <option value="fr">francais</option>
+            <option value="en">english</option>
+            <!--
+            <option value="de">deutsch</option>
+            <option value="es">spanish</option>
+            -->
+       </select>
 <hr/>
