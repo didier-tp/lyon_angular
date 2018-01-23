@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Rectangle } from "../rectangle";
+import { TradService } from "../trad.service";
 
 @Component({
   selector: 'app-rect',
@@ -17,7 +18,12 @@ export class RectComponent implements OnInit {
     this.aire = this.rectangle.aire();
   }
 
-  constructor() { }
+  constructor(public tradService : TradService) {
+      //ne surtout pas ecrire tradService = new TradService();
+      //car angular le fait déjà en mieux (avec prise en compte des
+      // choses à initialiser et préfixées par @....)
+
+   }
 
   ngOnInit() {
   }
