@@ -13,6 +13,8 @@ export class RectComponent implements OnInit {
   perimetre : number;
   aire : number;
 
+  copieLangueChoisie : string;
+
   onCalculer(evt : any){
     this.perimetre = this.rectangle.perimetre();
     this.aire = this.rectangle.aire();
@@ -22,8 +24,15 @@ export class RectComponent implements OnInit {
       //ne surtout pas ecrire tradService = new TradService();
       //car angular le fait déjà en mieux (avec prise en compte des
       // choses à initialiser et préfixées par @....)
-
-   }
+      this.copieLangueChoisie = tradService.codeLang;
+      
+      this.tradService.bsCodeLangue.subscribe(
+        (nouveauCodeLangue)=>{ 
+             this.copieLangueChoisie = nouveauCodeLangue;
+             console.log("nouveauCodeLangue:" + this.copieLangueChoisie);
+             }
+      );
+    }
 
   ngOnInit() {
   }
