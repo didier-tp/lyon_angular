@@ -29,7 +29,7 @@ export class RectComponent implements OnInit {
       this.tradService.bsCodeLangue.subscribe(
         (nouveauCodeLangue)=>{ 
              this.copieLangueChoisie = nouveauCodeLangue;
-             console.log("nouveauCodeLangue:" + this.copieLangueChoisie);
+             console.log("copieLangueChoisie:" + this.copieLangueChoisie);
              }
       );
     }
