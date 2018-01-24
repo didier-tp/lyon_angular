@@ -14,8 +14,10 @@ export class RectComponent implements OnInit {
   aire : number;
 
   copieLangueChoisie : string;
+  rectangleEnJson : string;
 
   onCalculer(evt : any){
+    this.rectangleEnJson = JSON.stringify(this.rectangle);
     this.perimetre = this.rectangle.perimetre();
     this.aire = this.rectangle.aire();
   }
@@ -29,7 +31,8 @@ export class RectComponent implements OnInit {
       this.tradService.bsCodeLangue.subscribe(
         (nouveauCodeLangue)=>{ 
              this.copieLangueChoisie = nouveauCodeLangue;
-             console.log("copieLangueChoisie:" + this.copieLangueChoisie);
+             console.log("copieLangueChoisie:" 
+                     + this.copieLangueChoisie);
              }
       );
     }

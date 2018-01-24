@@ -1,0 +1,11 @@
+<p> inscription works!</p>
+<input type="button" value="rechercher inscriptions"
+       (click)="onRechercheInscriptions()" /> <br/>
+inscriptions: {{inscriptions | json }} <br/>
+<table border="1">
+  <tr *ngFor="let ins of inscriptions">
+     <td>{{ins.prenom}}</td>
+     <td>{{ins.nom}}</td> 
+     <td>{{ins.telephone}}</td>
+  </tr>
+</table>

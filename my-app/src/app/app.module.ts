@@ -8,19 +8,23 @@ import { RectComponent } from './rect/rect.component';
 import { UtilModule } from "../util/util.module";
 import { MyheaderComponent } from './myheader/myheader.component';
 import { TradService } from "./trad.service";
-
+import { HttpModule } from '@angular/http';
+import './rxjs-extensions';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { InscriptionService } from "./inscription.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     TvaComponent,
     RectComponent,
-    MyheaderComponent
+    MyheaderComponent,
+    InscriptionComponent
   ],
   imports: [
-    BrowserModule , FormsModule , UtilModule
+    BrowserModule , HttpModule,FormsModule , UtilModule
   ],
-  providers: [ TradService ],
+  providers: [ TradService , InscriptionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
