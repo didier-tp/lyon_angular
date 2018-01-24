@@ -9,9 +9,27 @@ import { Inscription } from "../inscription";
 })
 export class InscriptionComponent implements OnInit {
 
-  inscriptions : Inscription[] ; 
+  inscriptions : Inscription[] ;
+  nouvelleInscription : Inscription = new  Inscription;
 
   constructor(private inscriptionService : InscriptionService) { }
+
+  callBackInscriptionBienAjoutee(inscriptionAjoutee : Inscription){
+     console.log("bien ajoute: "   + inscriptionAjoutee );
+  }
+
+  callBackError(e){
+    console.log("error :" + e);
+  }
+
+  onPostInscription(){
+    this.inscriptionService.postInscriptionObservable(
+                                  this.nouvelleInscription)
+        .subscribe(
+             this.callBackInscriptionBienAjoutee ,
+             this.callBackError
+        );
+}
 
   onRechercheInscriptions(){
       this.inscriptionService.getInscriptionsObservable()

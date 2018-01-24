@@ -1,4 +1,11 @@
 <p> inscription works!</p>
+nouvelle inscription: <br/>
+nom : <input [(ngModel)]="nouvelleInscription.nom" /> <br/>
+prenom : <input [(ngModel)]="nouvelleInscription.prenom" /> <br/>
+telephone : <input [(ngModel)]="nouvelleInscription.telephone" /> <br/>
+<input type="button" value="ajouter (post)"
+       (click)="onPostInscription()" />
+<hr/>
 <input type="button" value="rechercher inscriptions"
        (click)="onRechercheInscriptions()" /> <br/>
 inscriptions: {{inscriptions | json }} <br/>
