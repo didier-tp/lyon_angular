@@ -21,8 +21,12 @@ export class InscriptionService {
       .catch(e => { return Observable.throw('error:' + e);});
 }
 
-  public getInscriptionsObservable():Observable<Inscription[]>{
-      return this._http.get(this.inscriptionUrl)
+  public getInscriptionsObservable(numReg:string):Observable<Inscription[]>{
+    let url = this.inscriptionUrl; 
+    if(numReg != null && numReg.length >=2 ) {
+      url += "?numReg=" + numReg;
+    }
+    return this._http.get(url)
                        .map( response => response.json())
                        .catch(e => { return Observable.throw('error:' + e);});
   }

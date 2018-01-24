@@ -6,10 +6,13 @@ telephone : <input [(ngModel)]="nouvelleInscription.telephone" /> <br/>
 <input type="button" value="ajouter (post)"
        (click)="onPostInscription()" />
 <hr/>
+numReg (01 ou 02 ou ...) : 
+<input [(ngModel)]="numReg" /> <br/>
 <input type="button" value="rechercher inscriptions"
        (click)="onRechercheInscriptions()" /> <br/>
-inscriptions: {{inscriptions | json }} <br/>
+<!-- inscriptions: {{inscriptions | json }} <br/> -->
 <table border="1">
+  <tr> <th>prenom</th> <th>nom</th> <th>telephone</th></tr>
   <tr *ngFor="let ins of inscriptions">
      <td>{{ins.prenom}}</td>
      <td>{{ins.nom}}</td> 

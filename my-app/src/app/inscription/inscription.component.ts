@@ -11,6 +11,7 @@ export class InscriptionComponent implements OnInit {
 
   inscriptions : Inscription[] ;
   nouvelleInscription : Inscription = new  Inscription;
+  numReg : string =null;
 
   constructor(private inscriptionService : InscriptionService) { }
 
@@ -32,7 +33,7 @@ export class InscriptionComponent implements OnInit {
 }
 
   onRechercheInscriptions(){
-      this.inscriptionService.getInscriptionsObservable()
+      this.inscriptionService.getInscriptionsObservable(this.numReg)
           .subscribe(
                tabInscriptions => this.inscriptions = tabInscriptions ,
                e => console.log("error :" + e)
