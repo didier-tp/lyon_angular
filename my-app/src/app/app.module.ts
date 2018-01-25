@@ -18,6 +18,8 @@ import { Partie2Component } from './partie2/partie2.component';
 import { AppRoutingModule } from "./app-routing.module";
 import { DetailComponent } from './partie2/detail/detail.component';
 import { GeneralComponent } from './partie2/general/general.component';
+import { EmpruntComponent } from './emprunt/emprunt.component';
+import { EmpruntService } from "./emprunt.service";
 
 @NgModule({
   declarations: [
@@ -30,13 +32,14 @@ import { GeneralComponent } from './partie2/general/general.component';
     Partie1Component,
     Partie2Component,
     DetailComponent,
-    GeneralComponent
+    GeneralComponent,
+    EmpruntComponent
   ],
   imports: [
     BrowserModule , HttpModule,FormsModule ,
      UtilModule , AppRoutingModule
   ],
-  providers: [ TradService , InscriptionService ],
+  providers: [ TradService , InscriptionService , EmpruntService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

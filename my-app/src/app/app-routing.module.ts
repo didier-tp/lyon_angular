@@ -5,6 +5,7 @@ import { Partie1Component } from "./partie1/partie1.component";
 import { Partie2Component } from "./partie2/partie2.component";
 import { DetailComponent } from "./partie2/detail/detail.component";
 import { GeneralComponent } from "./partie2/general/general.component";
+import { EmpruntComponent } from "./emprunt/emprunt.component";
 
 const routes: Routes = [
 { path: 'welcome', component: WelcomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
     { path: 'general', component: GeneralComponent },
     { path: '', redirectTo: 'general', pathMatch: 'prefix'}
   ]
-}
+},
+{ path: 'emprunt', component: EmpruntComponent }
 ];
 @NgModule({
 imports: [ RouterModule.forRoot(routes) ],
