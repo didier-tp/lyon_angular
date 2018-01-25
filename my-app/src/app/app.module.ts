@@ -12,6 +12,12 @@ import { HttpModule } from '@angular/http';
 import './rxjs-extensions';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { InscriptionService } from "./inscription.service";
+import { WelcomeComponent } from './welcome/welcome.component';
+import { Partie1Component } from './partie1/partie1.component';
+import { Partie2Component } from './partie2/partie2.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { DetailComponent } from './partie2/detail/detail.component';
+import { GeneralComponent } from './partie2/general/general.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +25,16 @@ import { InscriptionService } from "./inscription.service";
     TvaComponent,
     RectComponent,
     MyheaderComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    WelcomeComponent,
+    Partie1Component,
+    Partie2Component,
+    DetailComponent,
+    GeneralComponent
   ],
   imports: [
-    BrowserModule , HttpModule,FormsModule , UtilModule
+    BrowserModule , HttpModule,FormsModule ,
+     UtilModule , AppRoutingModule
   ],
   providers: [ TradService , InscriptionService ],
   bootstrap: [AppComponent]

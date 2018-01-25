@@ -1,18 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="container-fluid"> 
-<app-myheader [title]="title"></app-myheader>
+<app-myheader [title]="title" [style.background]="'yellow'"></app-myheader>
   
-    <toggle-panel [title]="'tva'">
-      <app-tva></app-tva>
-    </toggle-panel>
+   <router-outlet></router-outlet>
 
-  <toggle-panel [title]="'rectangle'">
-      <app-rect></app-rect>
-    </toggle-panel>
-
-    <toggle-panel [title]="'inscription'">
-        <app-inscription></app-inscription>
-      </toggle-panel>
 <!--
     <tabs-group [titles]="['t1' , 't2' , 't3']"
     (activeTabEvent)="selTab=$event.value">
@@ -21,6 +12,11 @@
   <div [style.display]="selTab=='t3'?'block':'none'">ccc</div>
   </tabs-group>
 -->
+<hr/>
+<div [style.background]="'yellow'">
+    <!-- pied de page qui va bien -->
+    <a [routerLink]="['/welcome' ]" > welcome </a> <br/>
+</div>
 
 </div>
 
