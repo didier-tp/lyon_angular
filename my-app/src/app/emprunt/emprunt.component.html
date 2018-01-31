@@ -1,6 +1,8 @@
 <h3> calcul  emprunt </h3>
 montant : <input [(ngModel)]="montant" /> <br/>
 nbAnnees : <input [(ngModel)]="nbAnnees" /> <br/>
+<input type="button" value="recup taux courant selon duree" 
+    (click)="onFetchTauxCourantSelonDuree()"/> <br/>
 taux annuel : <input [(ngModel)]="tauxAnnuelPct" /> % <br/>
 <input type="button" value="calculer mensualite" 
        (click)="onCalculerMensualite()"/> <br/>

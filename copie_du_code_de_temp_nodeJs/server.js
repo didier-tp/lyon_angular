@@ -44,6 +44,38 @@ var tabInscription = [
 { prenom : "jean" , nom : "Bon" , telephone : "0101010101" },
 { prenom : "alex" , nom : "Therieur" , telephone : "0404042222" }
  ];
+ 
+var tabTauxSelonDurees = [
+    { min : 1 , max : 4 , taux: 1.1 },
+	{ min : 5 , max : 9 , taux: 1.5 },
+	{ min : 10 , max : 14 , taux: 1.7 },
+	{ min : 15 , max : 19 , taux: 1.9 } , 
+	{ min : 20 , max : 30 , taux: 2.1 }
+]; //ex: interets de 1.5%  pour duree entre 5 et 9 ans
+
+// http://localhost:8282/tp/tauxInteretCourant?duree=6
+// réponse retournée : { "duree" : 6 , "taux" : 1.5 }
+app.get('/tp/tauxInteretCourant', 
+function(req, res , next) {
+	var duree=req.query.duree;
+	console.log("tauxInteretCourant?duree=" + duree);
+	duree=Number(duree);
+	taux=0; //par défaut
+	for(index in tabTauxSelonDurees){
+		if( duree >= tabTauxSelonDurees[index].min
+		    && duree <= tabTauxSelonDurees[index].max){
+				taux= tabTauxSelonDurees[index].taux;
+				break;
+			}
+	}
+	var resultat = { 
+	     duree : duree,
+	     taux : taux };
+	console.log(JSON.stringify(resultat));
+	myGenericRestExpressUtil.sendDataOrError(null,
+	                                 resultat,res);
+});
+
 
 // http://localhost:8282/tp/inscription?numReg=01
 app.get('/tp/inscription', 
@@ -87,8 +119,10 @@ app.get('/test-ws', function(req, res , next) {
 res.setHeader('Content-Type', 'text/html');
 res.write("<html> <header>");
 res.write("</header> <body>");
-res.write('<p>test-ws for server.js (REST WS via nodeJs/express/mongoDB)</p>');
+res.write('<p>test-ws for server.js (REST WS via nodeJs/express)</p>');
 res.write('<p><a href="tp/xyz"> liste des contacts en JSON </a></p>');
+res.write('<p><a href="tp/tauxInteretCourant?duree=6"> taux interet pour 6 ans </a></p>');
+res.write('<p><a href="tp/inscription?numReg=01"> inscriptions de la regions 01 </a></p>');
 res.write("</body></html>");
 res.end();
 });

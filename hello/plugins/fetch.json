@@ -1,0 +1,18 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "xyz-my-echo-plugin": {
+    "source": {
+      "type": "local",
+      "path": "c:\\tp\\hello\\node_modules\\org.xyz.cordova.plugin.echo"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

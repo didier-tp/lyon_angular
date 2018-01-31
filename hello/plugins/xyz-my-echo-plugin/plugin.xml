@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="xyz-my-echo-plugin"      version="0.1.0">
+     <!-- id devant etre unique pour chaque plugin -->
+    <name>MyEcho</name>
+  <description>Cordova Xyz MyEcho Plugin</description>    <license>Apache 2.0</license>
+   <keywords>echo , "ecosystem:cordova", "cordova-android", "cordova-ios"  </keywords>
+   <repo>https://github.com/didier-mycontrib/cordova_plugin.git</repo>
+
+    <js-module src="www/my-echo.js" name="MyEcho">
+        <clobbers target="xyz.MyEcho" /> <!-- "api prefixe" dans future
+		                                       utilisation dans projet -->
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyEcho" >
+                <param name="android-package" value="org.xyz.plugin.MyEcho"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/MyEcho.java" target-dir="src/org/xyz/plugin" />
+    </platform>
+	
+	 <!-- browser (for tests) -->
+	<platform name="browser">
+		<config-file target="config.xml" parent="/*">
+			<feature name="MyEcho">
+				<param name="browser-package" value="MyEcho" />
+			</feature>
+		</config-file>
+
+		<js-module src="src/browser/MyEchoProxy.js" name="MyEchoProxy">
+			<runs />
+		</js-module>
+	</platform>
+ <!-- ios -->
+ <!--
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Echo">
+                <param name="ios-package" value="CDVEcho"/>
+            </feature>
+        </config-file>
+        <source-file src="src/ios/CDVEcho.m" />
+    </platform>
+  -->
+</plugin>

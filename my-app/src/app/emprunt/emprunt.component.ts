@@ -16,6 +16,16 @@ export class EmpruntComponent implements OnInit {
 
   constructor(private _empruntService : EmpruntService) { }
 
+  onFetchTauxCourantSelonDuree(){
+    if (this.nbAnnees >=1 && this.nbAnnees <=30){
+       this._empruntService.getTauxInteretCourantObservable(this.nbAnnees)
+                .subscribe(
+                  resultat => this.tauxAnnuelPct=resultat["taux"],
+                  error => console.log(error)
+                );
+    }
+  }
+
   onCalculerMensualite(){
     this.mensualite = 
        this._empruntService.calculMens(this.montant, 

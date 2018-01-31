@@ -1,0 +1,55 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "c:\\tp\\cordova_plugin",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "c:\\tp\\cordova_plugin",
+        "spec": "c:\\tp\\cordova_plugin",
+        "type": "directory"
+      },
+      "c:\\tp\\hello"
+    ]
+  ],
+  "_from": "..\\cordova_plugin",
+  "_id": "org.xyz.cordova.plugin.echo@1.0.0",
+  "_inCache": true,
+  "_location": "/org.xyz.cordova.plugin.echo",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "c:\\tp\\cordova_plugin",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "c:\\tp\\cordova_plugin",
+    "spec": "c:\\tp\\cordova_plugin",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:..\\cordova_plugin",
+  "_shasum": "2b1da60bb465a635060d0755ae312bdfaa73bb4c",
+  "_shrinkwrap": null,
+  "_spec": "c:\\tp\\cordova_plugin",
+  "_where": "c:\\tp\\hello",
+  "author": {
+    "name": "Didier Defrance"
+  },
+  "dependencies": {},
+  "description": "My Echo cordova plugin",
+  "devDependencies": {},
+  "displayName": "Echo",
+  "gitHead": "420a504c9d193d54ce9b5b7a098a1fbd3498e018",
+  "license": "Apache-2.0",
+  "name": "org.xyz.cordova.plugin.echo",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
