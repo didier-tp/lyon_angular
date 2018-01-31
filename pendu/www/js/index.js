@@ -36,7 +36,7 @@ var app = {
 	maxNbEssais : 6,
 	finPartie : false,
 	
-	dessinerPartiePendu(){
+	dessinerPartiePendu: function (){
 		var ctx = this.canvasElement.getContext("2d");
 		ctx.beginPath();
 		switch(this.nbEssais){
