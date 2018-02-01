@@ -26,7 +26,8 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     canvasElement : null,
-	listeMots : [ "cordova" , "javascript" , "android" , "navigateur" , "internet" ],
+	listeMots : [ "cordova" , "javascript" ,
+              	"android" , "navigateur" , "internet" ],
 	mot_a_deviner : null,
 	mot_en_partie_devine : null,
 	nb_lettres_a_trouver :0,
@@ -35,7 +36,7 @@ var app = {
 	maxNbEssais : 6,
 	finPartie : false,
 	
-	dessinerPartiePendu(){
+	dessinerPartiePendu: function (){
 		var ctx = this.canvasElement.getContext("2d");
 		ctx.beginPath();
 		switch(this.nbEssais){
