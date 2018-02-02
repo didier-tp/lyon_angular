@@ -1,0 +1,15 @@
+{
+  "name": "my-ionic-app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/weather",
+      "proxyUrl": 
+	     "http://api.openweathermap.org/data/2.5/weather"
+    }
+  ]
+}

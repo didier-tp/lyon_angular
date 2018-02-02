@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Conversion
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  montant : <input type="number" [(ngModel)]="montant" /><br/>
+  source : <select  [(ngModel)]="source" >
+              <option *ngFor="let d of devises">{{d}}</option>
+           </select> <br/>
+  cible : <select  [(ngModel)]="cible" >
+              <option *ngFor="let d of devises">{{d}}</option>
+           </select> <br/>  
+  <input type="button" value="convertir" (click)="onConvertir()" />
+   <br/>  sommeConvertie: {{sommeConvertie}}         
+</ion-content>

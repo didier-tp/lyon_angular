@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   latitude:{{latitude}} <br/>
+   longitude:{{longitude}} <br/>
+   altitude:{{altitude}} <br/>
+   si le plugin cordova "geolocation" a une bonne attitude .
+   <hr/>
+   <input type="button" value="meteo" (click)="onMeteo()" /> <br/>
+   {{infosMeteo | json}}
+</ion-content>
